@@ -1,0 +1,10 @@
+Of the three data structures(vector, hash table, and tree), I believe the best data structure would be the hash table.
+While the tree and the hash table both have a worst-case runtime complexity of O(N), accessing and changing data would
+be quicker in the hash table with the average search, insertion, or removal at O(1) time complexity with small amounts of data.
+With very large amounts of data a hash table would have to be very large to maintain fast search, insertion, and deletion times 
+so a binary tree should probably be the better option. Considering there are very few courses in this project the hash table would 
+likely be better than a tree. Vectors are often slow with insertion due to the need to shift all data when new data is inserted, a 
+vector is slower to search than a hash table unless the exact location of elements are known, and the removal of elements also shifts 
+data, so it will be slower as well. The insertion runtime complexity for the vector data structure is based on how many elements will be shifted 
+and how many elements will be inserted so O(mn). 
+For these reasons I have chosen the hash table over the vector. 
