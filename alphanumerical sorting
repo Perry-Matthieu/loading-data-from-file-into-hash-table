@@ -1,0 +1,71 @@
+int partition(vector<string>& names, int begin, int end) {
+
+    int low = begin;
+
+    int high = end;
+
+    // pick the middle element as pivot point
+
+    int pivot = begin + (end - begin) / 2;
+
+    bool done = false;
+
+    while (!done) {
+
+        // keep incrementing low as long as its less than pivot
+
+        while (names.at(low).compare(names.at(pivot)) < 0) {
+
+            ++low;
+
+        }
+
+        //keep decrementing high as long as its less than pivot
+
+        while (names.at(pivot).compare(names.at(high)) < 0) {
+
+            --high;
+
+        }
+
+        if (low >= high) {
+
+            done = true;
+
+        }
+        else {
+
+            //swap low and high courses using build in vector method
+
+            swap(names.at(low), names.at(high));
+
+            //move end points closer
+
+            ++low;
+
+            --high;
+
+        }
+
+    }
+
+    return high;
+
+}
+
+void quickSort(vector<string>& names, int begin, int end) {
+
+    int mid = 0;
+    //if zero or one courses to sort, then done.
+    if (begin >= end) {
+        return;
+    }
+    // partition courses into low and high parts
+    mid = partition(names, begin, end);
+
+    //recursively call quicksort using midpoint value
+    quickSort(names, begin, mid);
+
+    //recursively call quicksort using midpoint value
+    quickSort(names, mid + 1, end);
+}
